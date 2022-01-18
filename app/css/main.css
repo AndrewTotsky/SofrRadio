@@ -30,9 +30,14 @@ button {
     width: 28vw;
 }
 .play-icon {
-    margin: 20px 2.5% 20px 2.5%;
-    background: url("../img/play.svg") no-repeat;
     background-size: contain;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+}
+.filter-white {
+    height: 100%;
+    filter: brightness(0) invert(1);;
 }
 .pause-icon {
     margin: 20px 2.5% 20px 2.5%;
