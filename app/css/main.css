@@ -21,17 +21,17 @@ button {
     height: 40px;
 }
 .audio-player-container {
-    background: #d4d1d1;
+    background: linear-gradient(6deg,rgba(24,24,24,.95) 53%,rgba(155, 155, 155, 0.95) 200%);
     border-radius: 8px;
     display: flex;
     grid-area: a;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    width: 30vw;
+    width: 28vw;
 }
 .play-icon {
     margin: 20px 2.5% 20px 2.5%;
-    background: url("../img/play.png") no-repeat;
+    background: url("../img/play.svg") no-repeat;
     background-size: contain;
 }
 .pause-icon {
