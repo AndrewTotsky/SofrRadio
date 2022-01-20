@@ -1,4 +1,4 @@
-const playBtn = document.getElementById("play-icon");
+const playBtn = document.getElementsByClassName("play-icon")[0];
 const music = document.getElementById("music") as HTMLAudioElement;
 
 interface AudioInfo {
@@ -13,6 +13,7 @@ interface AudioInfo {
 if (playBtn && music) {
     playBtn.addEventListener("click", () => {
         if (playBtn.id === "play-icon") {
+            music.volume = 1.0
             music.play();
             music.onloadedmetadata = (event) => {
                 console.log(
@@ -60,12 +61,22 @@ const loadInfoAboutCurrAudio = async () => {
     }
 };
 loadInfoAboutCurrAudio().then((resStr) => {
-//   if(resStr) {
-//     const audioInfo = JSON.parse(resStr) as AudioInfo
-//     const musicTitle = document.getElementById("music-title")
-//     if(musicTitle?.innerHTML) {
-//       musicTitle.innerHTML = audioInfo.title
-//     }
-//     console.log('audioInfo => ', audioInfo.title)
-//   }
+  if(resStr) {
+    const audioInfo = JSON.parse(resStr) as AudioInfo
+    const musicTitle = document.getElementsByClassName("music-title")[0]
+    if(musicTitle?.innerHTML) {
+      musicTitle.innerHTML = audioInfo.title
+    }
+    console.log('audioInfo => ', audioInfo.title)
+  }
+})
+
+document.getElementById('plus')?.addEventListener('click', () => {
+    console.log(music.volume)
+    music.volume += 0.1
+})
+
+document.getElementById('minus')?.addEventListener('click', () => {
+    console.log(music.volume)
+    music.volume -= 0.1
 })
